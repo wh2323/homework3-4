@@ -18,7 +18,7 @@ if(isset($_POST["submit"])) {
       $result = "직사각형의 면적은 " . ($width * $height) . "입니다.";
       break;
     case "circle":
-      $radius = $_POST["radius"];
+      $radius = $_POST["width"];
       $result = "원의 면적은 " . (pi() * $radius * $radius) . "입니다.";
       break;
     case "cuboid":
@@ -28,13 +28,13 @@ if(isset($_POST["submit"])) {
       $result = "직육면체의 체적은 " . ($width * $height * $length) . "입니다.";
       break;
     case "cylinder":
-      $radius = $_POST["radius"];
+      $radius = $_POST["width"];
       $height = $_POST["height"];
       $result = "원기둥의 체적은 " . (pi() * $radius * $radius * $height) . "입니다.";
       break;
     case "sphere":
-      $radius = $_POST["radius"];
-      $result = "구의 체적은 " . (4/3 * pi() * $radius * $radius * $radius) . "입니다.";
+      $radius = $_POST["width"];
+      $result = "구의 체적은 " . (4/3 * pi() * pow($radius, 3)) . "입니다.";
       break;
     default:
       $result = "도형을 선택해주세요.";
